@@ -1,0 +1,105 @@
+$primary: #5b4bdb;
+$secondary: #edeaff;
+$background: #f5f6fa;
+$text: #25283d;
+$spacing: 16px;
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: $background;
+  color: $text;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 30px $spacing;
+
+  h1 {
+    text-align: center;
+    color: $primary;
+  }
+
+  h2 {
+    margin-top: 30px;
+  }
+}
+
+.cart-counter {
+  text-align: center;
+  background: $secondary;
+  color: $primary;
+  padding: $spacing;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.product-form {
+  max-width: 450px;
+  margin: 25px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px #00000010;
+
+  input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+  }
+}
+
+button {
+  background: $primary;
+  color: white;
+  border: none;
+  padding: 11px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+
+  &:hover {
+    background: darken($primary, 10%);
+  }
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.product-card {
+  background: white;
+  padding: 22px;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px #00000010;
+  transition: transform 0.2s, box-shadow 0.2s;
+
+  &.hovered {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px #00000018;
+  }
+
+  .price {
+    color: $primary;
+    font-size: 22px;
+    font-weight: bold;
+  }
+}
+
+@media (max-width: 700px) {
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 450px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+}
